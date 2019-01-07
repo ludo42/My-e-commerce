@@ -38,32 +38,7 @@
 
        ?>
 
-       <table class="table table-bordered table-condensed">
-                <thead>
-                    <tr>
-                        <th>nb produit</th>
-                        <th>nom</th>
-                        <th>description</th>
-                        <th>prix</th>
-                        <th>photo</th>
-                        <th>taille</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = $q->fetch()): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($row['nbProduit']) ?></td>
-                            <td><?php echo htmlspecialchars($row['nom']); ?></td>
-                            <td><?php echo htmlspecialchars($row['description']); ?></td>
-                            <td><?php echo htmlspecialchars($row['prix']); ?></td>
-                            <td><?php echo htmlspecialchars($row['photo']); ?></td>
-                            <td><?php echo htmlspecialchars($row['taille']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-
-
+       
 
     <header>
     </header>
