@@ -173,10 +173,37 @@
 
             if (isset($_POST['inscriNom'])&&isset($_POST['inscriMail'])&&isset($_POST['inscriPrenom'])&&isset($_POST['inscriPass'])&&isset($_POST['inscriVerif'])) {
               // code...
-              echo $_POST['inscriPass'];
+              if ($_POST['inscriPass']==$_POST['inscriVerif']) {
+                // code...
+                try {
+
+
+
+      $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+
+
+      $req = $bdd->prepare('INSERT INTO users (nom, prenom, email, passw)'.'VALUES (:temp, :humidite, :daate)');
+
+      $req->execute(array('nom' => ''.$_POST['inscriNom'],
+                          'prenom' => ''.$_POST['inscriPrenom'],
+                          'email' => ''.$_POST['inscriMail'],
+                          'passw' => ''.$_POST['inscriPass']));
+
+      echo "<div>inscription Réussite</div>";
+      $req=null;
+      $bdd=null;
+
+      //Fermer la connexion SQL (si absent, automatique à la fin du script)
+
+  }
+
+
+              }
             }
 
-echo $_POST['inscriPass'];
+            else {
+              echo "Erreur d'envoi du formulaire";
+            }
 
 
             ?>
