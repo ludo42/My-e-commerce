@@ -132,24 +132,24 @@
                             <div class="form-group">
                                 <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
                                 <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                <input type="email" class="form-control" id="inscriMail" name="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
                                 <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
                             </div>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Nom</label>
-                              <input type="text" class="form-control" id="inscriNom">
+                              <input type="text" class="form-control" id="inscriNom" name="inscriNom">
                             </div>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Prenom</label>
-                              <input type="text" class="form-control" id="inscriPrenom">
+                              <input type="text" class="form-control" id="inscriPrenom" name="inscriPrenom">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="inscriPass" placeholder="Mot de passe">
+                                <input type="password" class="form-control" id="inscriPass" name="inscriPass" placeholder="Mot de passe">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Répeter le mot de passe</label>
-                                <input type="password" class="form-control" id="inscriVerif" placeholder="Mot de passe">
+                                <input type="password" class="form-control" id="inscriVerif" name="inscriVerif" placeholder="Mot de passe">
                             </div>
                             <button type="submit" class="btn btn-primary">S'inscrire</button>
                         </form>
