@@ -176,7 +176,7 @@
               echo $_POST['inscriPass'];
             }
 
-
+echo $_POST['inscriPass'];
 
 
             ?>
