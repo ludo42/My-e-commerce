@@ -182,7 +182,7 @@
       $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 
-      $req = $bdd->prepare('INSERT INTO users (nom, prenom, email, passw)'.'VALUES (:temp, :humidite, :daate)');
+      $req = $bdd->prepare('INSERT INTO users (nom, prenom, email, passw)'.'VALUES (:nom, :prenom, :email, :passw)');
 
       $req->execute(array('nom' => ''.$_POST['inscriNom'],
                           'prenom' => ''.$_POST['inscriPrenom'],
