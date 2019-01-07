@@ -26,7 +26,7 @@
        /*Essai de connexion en créant on objet connexion avec les informations de la BDD*/
        try {
                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-               
+
 
 
                $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
@@ -54,6 +54,9 @@
                 <a class="logo-bar" href="index.html">(Owl Art)</a>
                 <a href="compte.html"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
                 <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#exampleModal">
+                    Inscription / Connexion
+                </button>
+                <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#inscription">
                     Inscription / Connexion
                 </button>
                 <a class="col-lg-2 col-md-4 col-1 panier" href="panier.html">
@@ -104,6 +107,51 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Se connecter</button>
                             <button type="submit" class="btn btn-warning">Mot de passe perdu</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form method="post" action="trait/incription.php">
+                            <div class="form-group">
+                                <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
+                                <label for="exampleInputEmail1">Adresse email</label>
+                                <input type="email" class="form-control" id="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Nom</label>
+                              <input type="text" class="form-control" id="inscriNom">
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Prenom</label>
+                              <input type="text" class="form-control" id="inscriPrenom">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <input type="password" class="form-control" id="inscriPass" placeholder="Mot de passe">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Répeter le mot de passe</label>
+                                <input type="password" class="form-control" id="inscriVerif" placeholder="Mot de passe">
+                            </div>
+                            <button type="submit" class="btn btn-primary">S'inscrire</button>
                         </form>
 
 
