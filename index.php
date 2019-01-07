@@ -19,6 +19,35 @@
 
 <body>
 
+<?php
+       /*Inclusion d'un fichier de configuration pour centraliser les informations de connexion*/
+       require_once 'test.php';
+
+       /*Essai de connexion en créant on objet connexion avec les informations de la BDD*/
+       try {
+               $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+               echo "Connected to $dbname at $host successfully.";
+
+
+               $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
+                   FROM produit
+                   ORDER BY nbProduit
+                   limit 10';
+
+               $q = $conn->query($sql);
+               $q->setFetchMode(PDO::FETCH_ASSOC);
+
+           }
+
+           /*Si erreur ou exception, interception du message*/
+            catch (PDOException $pe) {
+               die("Could not connect to the database $dbname :" . $pe->getMessage());
+           }
+
+
+       ?>
+
+
     <div class="container-fluid">
         <header class="col-lg-12 col-md-12 col-12">
             <div class="top-bar col-lg-12 col-md-12 col-12">
@@ -143,142 +172,24 @@
 
                 <div class="card-columns">
 
+<?php while ($row = $q->fetch()): ?>
+
+        <div class="card move">
+            <img class="card-img-top" src="<?php echo htmlspecialchars($row['photo']); ?>" alt="Card image cap">
+            <div class="card-body cat">
+                <h5 class="card-title"><?php echo htmlspecialchars($row['nbProduit']) ?><</h5>
+                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?><br>Taille : <?php echo htmlspecialchars($row['taille']); ?><br><?php echo htmlspecialchars($row['prix']); ?> €</p>
+                <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
+                <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
+            </div>
+        </div>
+
+          <?php endwhile; ?>
 
 
-                    <div class="card move">
-                        <img class="card-img-top" src="visage.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Mr Cenz</h5>
-                            <p class="card-text">Technique : Peinture aérosol sur toile<br>Taille : 60x60cm<br>500 €</p>
-                            <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
-                            <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
-                        </div>
-                    </div>
-
-                    <div class="card p-3">
-                        <blockquote class="blockquote mb-0 card-body">
-                            <p>"La peinture, ce n'est pas copier la nature mais c'est apprendre à travailler comme elle."</p>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Pablo Picasso Artiste, Peintre (1881 - 1973).
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="10665-DSC_0002.JPG" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">la femme moderne assise endormie</h5>
-                            <p class="card-text">Technique : Huile ou acrylique<br>Taille : 100x100cm<br>500 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="11328-IMG_2153_1.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Symphonie en jaune</h5>
-                            <p class="card-text">peinture abstraite<br>toile 80x80<br>technique mixte: coulures collage encre de chine <br>400 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-                    <div class="card p-3">
-                        <blockquote class="blockquote mb-0 card-body">
-                            <p>"La peinture est la face visible de l'iceberg de ma pensée."</p>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Salvador Dali Artiste, Peintre (1904 - 1989)
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="rattanachai-singtrangarn-1054936-unsplash.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Julien Lenotre</h5>
-                            <p class="card-text">Lampe angulaire<br>Taille : 115 x 80 cm<br>2 200 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="abstract-art-artistic-990824.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Fred Boutet</h5>
-                            <p class="card-text">Abstract 10 2018<br>Taille : 100 x 100 x 3 cm<br>1 000 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
 
 
-                    <div class="card move">
-                        <img class="card-img-top" src="photo-1467840125074-ab6ec13ef683.jpeg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Stoz</h5>
-                            <p class="card-text">WW45H 2018<br>Taille : 102 x 40 x 20 cm<br>660 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
 
-                    <div class="card move">
-                        <img class="card-img-top" src="428484_1_original.webp" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Milburn-Foster</h5>
-                            <p class="card-text">Men fighting 2017<br>Taille : 130 x 97 x 2 cm<br>3 400 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="abstract-art-board-889839.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Marie Tissot</h5>
-                            <p class="card-text">La colombe 2018<br>Taille : 54 x 73 x 2 cm<br>4 600 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-                    <div class="card p-3">
-                        <blockquote class="blockquote mb-0 card-body">
-                            <p>"La peinture est une poésie qui se voit au lieu de se sentir et la poésie est une peinture qui se sent au lieu de se voir."</p>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Léonard De Vinci Artiste, Peintre, (1452 - 1519).
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-
-                    <div class="card move">
-                        <img class="card-img-top" src="413107_1_original.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Roland Ferrari</h5>
-                            <p class="card-text">Bleu 2018<br>Taille : 92 x 73 cm<br>Peinture<br>1 000 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
-
-
-                    <div class="card move">
-                        <img class="card-img-top" src="rey.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <h5 class="card-title">Tic</h5>
-                            <p class="card-text">The laughing heart 2018<br>Taille : 135 x 80 x 1 cm<br>1 450 €</p>
-                            <button type="button" class="btn btn-outline-primary">Description</button>
-                            <button type="button" class="btn btn-outline-warning">Panier</button>
-                        </div>
-                    </div>
 
                 </div>
 
