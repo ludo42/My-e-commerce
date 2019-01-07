@@ -102,7 +102,7 @@
                                 <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1" name="connectMPD">Mot de passe</label>
+                                <label for="exampleInputPassword1" name="connectMDP">Mot de passe</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
                             </div>
                             <button type="submit" class="btn btn-primary">Se connecter</button>
