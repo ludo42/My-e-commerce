@@ -1,0 +1,138 @@
+<div class="card-columns">
+
+                    <div class="card">
+                        <img class="card-img-top" src="JANUSZ%20ORZECHOWSKI%20Huile%20sur%20toile%20batman%20superman%20TAM660481p.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">JANUSZ ORZECHOWSKI</h5>
+                            <p class="card-text">When batman meets superman<br>(130cm X 80cm)<br>Réf: TAM660481 GALERIE MARAIS<br>2,000€</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card p-3">
+                        <blockquote class="blockquote mb-0 card-body">
+                            <p>"La peinture, ce n'est pas copier la nature mais c'est apprendre à travailler comme elle."</p>
+                            <footer class="blockquote-footer">
+                                <small class="text-muted">
+                                Pablo Picasso  Artiste, Peintre (1881 - 1973).
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="10665-DSC_0002.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">la femme moderne assise endormie</h5>
+                            <p class="card-text">Technique : Huile ou acrylique<br>Taille : 100x100cm<br>500 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="11328-IMG_2153_1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Symphonie en jaune</h5>
+                            <p class="card-text">peinture abstraite<br>toile 80x80<br>technique mixte: coulures collage encre de chine <br>400 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card p-3">
+                        <blockquote class="blockquote mb-0 card-body">
+                            <p>"La peinture est la face visible de l'iceberg de ma pensée."</p>
+                            <footer class="blockquote-footer">
+                                <small class="text-muted">
+                                Salvador Dali Artiste, Peintre (1904 - 1989)
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="427944_1_original.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Julien Raynaud</h5>
+                            <p class="card-text">Vamos a la playa 2018<br>Taille : 115 x 80 x 2 cm<br>2 200 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="abstract-art-artistic-990824.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Fred Boutet</h5>
+                            <p class="card-text">Abstract 10 2018<br>Taille : 100 x 100 x 3 cm<br>1 000 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <img class="card-img-top" src="photo-1467840125074-ab6ec13ef683.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Stoz</h5>
+                            <p class="card-text">WW45H 2018<br>Taille : 102 x 40 x 20 cm<br>660 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="428484_1_original.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Milburn-Foster</h5>
+                            <p class="card-text">Men fighting 2017<br>Taille : 130 x 97 x 2 cm<br>3 400 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="433281_1_original.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Marie Tissot</h5>
+                            <p class="card-text">La colombe 2018<br>Taille : 54 x 73 x 2 cm<br>4 600 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                    <div class="card p-3">
+                        <blockquote class="blockquote mb-0 card-body">
+                            <p>"La peinture est une poésie qui se voit au lieu de se sentir et la poésie est une peinture qui se sent au lieu de se voir."</p>
+                            <footer class="blockquote-footer">
+                                <small class="text-muted">
+                               Léonard De Vinci Artiste, Peintre, (1452 - 1519).
+                                </small
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="413107_1_original.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Roland Ferrari</h5>
+                            <p class="card-text">Bleu 2018<br>Taille : 92 x 73 cm<br>Peinture<br>1 000 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <img class="card-img-top" src="269572_1_original.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Tic</h5>
+                            <p class="card-text">The laughing heart 2018<br>Taille : 135 x 80 x 1 cm<br>1 450 €</p>
+                            <button type="button" class="btn btn-outline-primary">Description</button>
+                            <button type="button" class="btn btn-outline-warning">Panier</button>
+                        </div>
+                    </div>
+
+                </div>
