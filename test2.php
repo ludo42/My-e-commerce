@@ -18,7 +18,7 @@
 
                $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
                    FROM produit
-                   ORDER BY nmProduit
+                   ORDER BY nbProduit
                    limit 10';
 
                $q = $conn->query($sql);
