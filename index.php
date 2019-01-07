@@ -26,7 +26,7 @@
        /*Essai de connexion en créant on objet connexion avec les informations de la BDD*/
        try {
                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-               echo "Connected to $dbname at $host successfully.";
+               
 
 
                $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
