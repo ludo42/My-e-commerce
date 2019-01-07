@@ -21,7 +21,7 @@
 
 <?php
        /*Inclusion d'un fichier de configuration pour centraliser les informations de connexion*/
-       require_once 'elineda.ovh/My-e-commerce/test.php';
+       require_once 'http://elineda.ovh/My-e-commerce/test.php';
 
        /*Essai de connexion en créant on objet connexion avec les informations de la BDD*/
        try {
