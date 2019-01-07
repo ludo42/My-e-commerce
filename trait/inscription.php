@@ -162,197 +162,30 @@
 
 
 
-        <div class="container-fluid">
-            <aside>
 
-                <div class="row menu">
-
-
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="julie.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">ART ABSTRAIT</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="rey.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">CONTEMPORAIN</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="henrik.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">TABLEAU</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="florian-klauer-489-unsplash.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">OBJET DESIGN</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-            </aside>
-
-        </div>
 
 
 
         <main>
+          <div class="container-fluid">
 
+            <?php
 
-            <div class="enorme col-lg-12 col-md-12 col-12">
-                <H1>NOUVEAUTES</H1>
-            </div>
-
-            <div class="container">
-
-
-                <div class="card-columns">
-
-<?php while ($row = $q->fetch()): ?>
-
-        <div class="card move">
-            <img class="card-img-top" src="<?php echo htmlspecialchars($row['photo']); ?>" alt="Card image cap">
-            <div class="card-body cat">
-                <h5 class="card-title"><?php echo htmlspecialchars($row['nom']) ?></h5>
-                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?><br>Taille : <?php echo htmlspecialchars($row['taille']); ?><br><?php echo htmlspecialchars($row['prix']); ?> €</p>
-                <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
-                <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
-            </div>
-        </div>
-
-          <?php endwhile; ?>
+            if (isset($_POST['inscriNom'])&&isset($_POST['inscriMail'])&&isset($_POST['inscriPrenom'])&&isset($_POST['inscriPass'])&&isset($_POST['inscriVerif'])) {
+              // code...
+              echo $_POST['inscriPass'];
+            }
 
 
 
 
+            ?>
 
 
-                </div>
+
 
             </div>
-
-        </main>
-
-
-
-        <div class="container blog">
-            <div class="enorme event col-lg-12 col-md-12 col-12">
-                <H1>EVENEMENT</H1>
-            </div>
-            <div class="row">
-
-
-                <!--1. The <iframe> (and video player) will replace this <div> tag. -->
-                <div class="actu col-lg-6">
-                    <div id="player"></div>
-
-                    <script>
-                        // 2. This code loads the IFrame Player API code asynchronously.
-                        var tag = document.createElement('script');
-
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                        // 3. This function creates an <iframe> (and YouTube player)
-                        //    after the API code downloads.
-                        var player;
-
-                        function onYouTubeIframeAPIReady() {
-                            player = new YT.Player('player', {
-                                height: '360',
-                                width: '640',
-                                videoId: 'vMNJqz2AupU',
-                                events: {
-                                    'onReady': onPlayerReady,
-                                    'onStateChange': onPlayerStateChange
-                                }
-                            });
-                        }
-
-                        // 4. The API will call this function when the video player is ready.
-                        function onPlayerReady(event) {
-                            event.target.playVideo();
-                        }
-
-                        // 5. The API calls this function when the player's state changes.
-                        //    The function indicates that when playing a video (state=1),
-                        //    the player should play for six seconds and then stop.
-                        var done = false;
-
-                        function onPlayerStateChange(event) {
-                            if (event.data == YT.PlayerState.PLAYING && !done) {
-                                setTimeout(stopVideo, 6000);
-                                done = true;
-                            }
-                        }
-
-                        function stopVideo() {
-                            player.stopVideo();
-                        }
-
-                    </script>
-                </div>
-
-
-                <div class="card text-event col-lg-4 col-md-4 col-4">
-                    <div class="card-body">
-                        <h3>ROCK</h3>
-                        <p>15 novembre au 29 novembre 2018</p>
-                        <h5>Galerie PERAHIA (Paris, FRANCE)</h5>
-                        <p><em>La nouvelle exposition Street Art à ne pas rater à la galerie PERAHIA. Tous les grands noms réunis autour d'un même thème : ROCK! Jonone, L'atlas, Tanc, Onemizer, M. Chat, Jerome Mesnager, Rubinstein, Orlinski, Revon, Miss Tic, Combas.</em></p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <section>
-            <div class="container-fluid">
-                <div class="row modalite col-lg-12">
-
-                    <div class="mod bord col-lg-3">
-                        <img src="box-4.png">
-                        <p>Livraison soigné</p>
-                    </div>
-
-                    <div class="mod bord col-lg-3">
-                        <img src="truck.png">
-                        <p>Livraison 24Hr</p>
-                    </div>
-
-                    <div class="mod bord col-lg-3">
-                        <img src="credit-card.png">
-                        <p>Paiment sécurisé</p>
-                    </div>
-
-                    <div class="mod col-lg-3">
-                        <img src="conversation.png">
-                        <p>Service Client</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+</main>
 
 
 
