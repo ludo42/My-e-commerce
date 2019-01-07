@@ -87,22 +87,22 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription / Connexion</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
-                        <form>
+                        <form method="post" action="connexion.php">
                             <div class="form-group">
                                 <h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
                                 <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="connectMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
                                 <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <label for="exampleInputPassword1" name="connectMPD">Mot de passe</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
                             </div>
                             <button type="submit" class="btn btn-primary">Se connecter</button>
