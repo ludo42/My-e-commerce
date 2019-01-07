@@ -177,7 +177,7 @@
         <div class="card move">
             <img class="card-img-top" src="<?php echo htmlspecialchars($row['photo']); ?>" alt="Card image cap">
             <div class="card-body cat">
-                <h5 class="card-title"><?php echo htmlspecialchars($row['nom']) ?><</h5>
+                <h5 class="card-title"><?php echo htmlspecialchars($row['nom']) ?></h5>
                 <p class="card-text"><?php echo htmlspecialchars($row['description']); ?><br>Taille : <?php echo htmlspecialchars($row['taille']); ?><br><?php echo htmlspecialchars($row['prix']); ?> €</p>
                 <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
                 <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
