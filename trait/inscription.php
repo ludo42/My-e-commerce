@@ -29,13 +29,6 @@
 
 
 
-               $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
-                   FROM produit
-                   ORDER BY nbProduit
-                   limit 10';
-
-               $q = $conn->query($sql);
-               $q->setFetchMode(PDO::FETCH_ASSOC);
 
            }
 
@@ -128,7 +121,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form method="post" action="trait/inscription.php">
+                        <form method="post" action="/trait/inscription.php">
                             <div class="form-group">
                                 <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
                                 <label for="exampleInputEmail1">Adresse email</label>
