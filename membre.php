@@ -152,9 +152,6 @@
 
             <?php
 
-            if (isset($_POST['connectMail'])&&isset($_POST['connectMDP'])) {
-              // code...
-
 
 
 
@@ -175,29 +172,16 @@ if (!mysqli_query($con,$sql)) {
 }
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
+?>
+<div><?php echo $row['nom'];?></div>
 
-//exemple $row['nom']
+<?php
 
-//if ($_SESSION['co']==1) {
-  // code...
-  ?>
-<div><?php echo $row['nom']?></div>
-
-  <?php
-//}
-//else {
-  //echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
-//}
 
 mysqli_close($con);
 
 
 
-            }
-
-            else {
-              echo "Erreur d'envoi du formulaire";
-            }
 
 
             ?>
