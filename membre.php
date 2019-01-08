@@ -176,14 +176,16 @@ if (!mysqli_query($con,$sql)) {
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 
-if ($row['passw']==$_POST['connectMDP']) {
+if ($_SESSION['co']==1) {
   // code...
-     echo "<script>window.location = 'http://elineda.ovh'</script>";
-   exit;
-  }
-  else {
-    echo 'mauvais mdp';
-  }
+  ?>
+
+
+  <?php
+}
+else {
+  echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
+}
 
 mysqli_close($con);
 
