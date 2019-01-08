@@ -55,7 +55,7 @@
     <div class="container-fluid">
         <header class="col-lg-12 col-md-12 col-12">
             <div class="top-bar col-lg-12 col-md-12 col-12">
-                <a class="logo-bar" href="index.html">(Owl Art)</a>
+                <a class="logo-bar" href="index.php">(Owl Art)</a>
                 <?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?><a href="compte.html"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
                     <a class="logo-bar" href="deco.php"><button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal">
                       Deconnexion
@@ -69,7 +69,7 @@
                 <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#inscription">
                     Inscription
                 </button><?php endif; ?>
-                <a class="col-lg-2 col-md-4 col-1 panier" href="panier.html">
+                <a class="col-lg-2 col-md-4 col-1 panier" href="panier.php">
                     <img src="030-shopping-bag.png">Panier
                 </a>
             </div>
@@ -237,7 +237,7 @@
                 <h5 class="card-title"><?php echo htmlspecialchars($row['nom']) ?></h5>
                 <p class="card-text"><?php echo htmlspecialchars($row['description']); ?><br>Taille : <?php echo htmlspecialchars($row['taille']); ?><br><?php echo htmlspecialchars($row['prix']); ?> €</p>
                 <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
-                <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
+                <a class="btn btn-outline-warning" href="panier.php?item=<?php echo htmlspecialchars($row['nbProduit']) ?>" role="button">Panier</a>
             </div>
         </div>
 
