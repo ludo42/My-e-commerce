@@ -178,7 +178,9 @@ $row = mysqli_fetch_assoc($result);
 
 if ($row['passw']==$_POST['connectMDP']) {
   // code...
-     echo "<script>window.location = 'http://elineda.ovh'</script>";
+    $_SESSION['co']=1;
+    $_SESSION['client']=$row['email'];
+     echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
    exit;
   }
   else {

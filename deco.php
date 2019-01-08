@@ -20,33 +20,10 @@
 
 <body>
 
-
-
-
 <?php
        /*Inclusion d'un fichier de configuration pour centraliser les informations de connexion*/
        require_once 'test.php';
 
-       /*Essai de connexion en créant on objet connexion avec les informations de la BDD*/
-       try {
-               $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-
-
-
-               $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
-                   FROM produit
-                   ORDER BY nbProduit
-                   limit 10';
-
-               $q = $conn->query($sql);
-               $q->setFetchMode(PDO::FETCH_ASSOC);
-
-           }
-
-           /*Si erreur ou exception, interception du message*/
-            catch (PDOException $pe) {
-               die("Could not connect to the database $dbname :" . $pe->getMessage());
-           }
 
 
        ?>
@@ -97,25 +74,26 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Inscription / Connexion</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
-                        <form method="post" action="connexion.php">
+                        <form>
                             <div class="form-group">
                                 <h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
                                 <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="connectMail" name="connectMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
                                 <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="connectMDP" name="connectMDP" placeholder="Mot de passe">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
                             </div>
                             <button type="submit" class="btn btn-primary">Se connecter</button>
+                            <button type="submit" class="btn btn-warning">Mot de passe perdu</button>
                         </form>
 
 
@@ -137,28 +115,28 @@
                     </div>
                     <div class="modal-body">
 
-                        <form method="post" action="trait/inscription.php">
+                        <form method="post" action="/trait/inscription.php">
                             <div class="form-group">
                                 <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
                                 <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="inscriMail" name="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                <input type="email" class="form-control" id="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
                                 <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
                             </div>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Nom</label>
-                              <input type="text" class="form-control" id="inscriNom" name="inscriNom">
+                              <input type="text" class="form-control" id="inscriNom">
                             </div>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Prenom</label>
-                              <input type="text" class="form-control" id="inscriPrenom" name="inscriPrenom">
+                              <input type="text" class="form-control" id="inscriPrenom">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="inscriPass" name="inscriPass" placeholder="Mot de passe">
+                                <input type="password" class="form-control" id="inscriPass" placeholder="Mot de passe">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Répeter le mot de passe</label>
-                                <input type="password" class="form-control" id="inscriVerif" name="inscriVerif" placeholder="Mot de passe">
+                                <input type="password" class="form-control" id="inscriVerif" placeholder="Mot de passe">
                             </div>
                             <button type="submit" class="btn btn-primary">S'inscrire</button>
                         </form>
@@ -171,197 +149,28 @@
 
 
 
-        <div class="container-fluid">
-            <aside>
 
-                <div class="row menu">
-
-
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="julie.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">ART ABSTRAIT</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="rey.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">CONTEMPORAIN</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="henrik.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">TABLEAU</p>
-                        </div>
-                    </div>
-
-                    <div class="card test" style="width: 18rem;">
-                        <img class="card-img-top" src="florian-klauer-489-unsplash.jpg" alt="Card image cap">
-                        <div class="card-body cat">
-                            <p class="card-text">OBJET DESIGN</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-            </aside>
-
-        </div>
 
 
 
         <main>
+          <div class="container-fluid">
+
+            <?php
+ $_SESSION['co']=0;
+ $_SESSION['client']="";
+
+     echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
+   exit;
 
 
-            <div class="enorme col-lg-12 col-md-12 col-12">
-                <H1>NOUVEAUTES</H1>
-            </div>
-
-            <div class="container">
-
-
-                <div class="card-columns">
-
-<?php while ($row = $q->fetch()): ?>
-
-        <div class="card move">
-            <img class="card-img-top" src="<?php echo htmlspecialchars($row['photo']); ?>" alt="Card image cap">
-            <div class="card-body cat">
-                <h5 class="card-title"><?php echo htmlspecialchars($row['nom']) ?></h5>
-                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?><br>Taille : <?php echo htmlspecialchars($row['taille']); ?><br><?php echo htmlspecialchars($row['prix']); ?> €</p>
-                <a class="btn btn-outline-primary" href="description.html" role="button">Description</a>
-                <a class="btn btn-outline-warning" href="panier.html" role="button">Panier</a>
-            </div>
-        </div>
-
-          <?php endwhile; ?>
+            ?>
 
 
 
-
-
-
-                </div>
 
             </div>
-
-        </main>
-
-
-
-        <div class="container blog">
-            <div class="enorme event col-lg-12 col-md-12 col-12">
-                <H1>EVENEMENT</H1>
-            </div>
-            <div class="row">
-
-
-                <!--1. The <iframe> (and video player) will replace this <div> tag. -->
-                <div class="actu col-lg-6">
-                    <div id="player"></div>
-
-                    <script>
-                        // 2. This code loads the IFrame Player API code asynchronously.
-                        var tag = document.createElement('script');
-
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                        // 3. This function creates an <iframe> (and YouTube player)
-                        //    after the API code downloads.
-                        var player;
-
-                        function onYouTubeIframeAPIReady() {
-                            player = new YT.Player('player', {
-                                height: '360',
-                                width: '640',
-                                videoId: 'vMNJqz2AupU',
-                                events: {
-                                    'onReady': onPlayerReady,
-                                    'onStateChange': onPlayerStateChange
-                                }
-                            });
-                        }
-
-                        // 4. The API will call this function when the video player is ready.
-                        function onPlayerReady(event) {
-                            event.target.playVideo();
-                        }
-
-                        // 5. The API calls this function when the player's state changes.
-                        //    The function indicates that when playing a video (state=1),
-                        //    the player should play for six seconds and then stop.
-                        var done = false;
-
-                        function onPlayerStateChange(event) {
-                            if (event.data == YT.PlayerState.PLAYING && !done) {
-                                setTimeout(stopVideo, 6000);
-                                done = true;
-                            }
-                        }
-
-                        function stopVideo() {
-                            player.stopVideo();
-                        }
-
-                    </script>
-                </div>
-
-
-                <div class="card text-event col-lg-4 col-md-4 col-4">
-                    <div class="card-body">
-                        <h3>ROCK</h3>
-                        <p>15 novembre au 29 novembre 2018</p>
-                        <h5>Galerie PERAHIA (Paris, FRANCE)</h5>
-                        <p><em>La nouvelle exposition Street Art à ne pas rater à la galerie PERAHIA. Tous les grands noms réunis autour d'un même thème : ROCK! Jonone, L'atlas, Tanc, Onemizer, M. Chat, Jerome Mesnager, Rubinstein, Orlinski, Revon, Miss Tic, Combas.</em></p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <section>
-            <div class="container-fluid">
-                <div class="row modalite col-lg-12">
-
-                    <div class="mod bord col-lg-3">
-                        <img src="box-4.png">
-                        <p>Livraison soigné</p>
-                    </div>
-
-                    <div class="mod bord col-lg-3">
-                        <img src="truck.png">
-                        <p>Livraison 24Hr</p>
-                    </div>
-
-                    <div class="mod bord col-lg-3">
-                        <img src="credit-card.png">
-                        <p>Paiment sécurisé</p>
-                    </div>
-
-                    <div class="mod col-lg-3">
-                        <img src="conversation.png">
-                        <p>Service Client</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+</main>
 
 
 
