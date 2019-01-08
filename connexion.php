@@ -154,6 +154,9 @@
             if (isset($_POST['connectMail'])&&isset($_POST['connectMDP'])) {
               // code...
 
+try {
+
+
 
 
 
@@ -169,8 +172,7 @@
 
 
       echo $q;
-      $req=null;
-      $bdd=null;
+
 
       //Fermer la connexion SQL (si absent, automatique à la fin du script)
 
