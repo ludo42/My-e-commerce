@@ -180,6 +180,7 @@ if ($row['passw']==$_POST['connectMDP']) {
   // code...
     $_SESSION['co']=1;
     $_SESSION['client']=$row['email'];
+    $_SESSION['id']=$row['nmClient'];
      echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
    exit;
   }
