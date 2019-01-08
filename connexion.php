@@ -154,6 +154,17 @@
             if (isset($_POST['connectMail'])&&isset($_POST['connectMDP'])) {
               // code...
 
+              include 'db_connect.php';
+
+              mysql_select_db($dbname, $username,$password);
+
+              $query = "SELECT * FROM produit WHERE email ='". mysql_real_escape_string($_POST['connectMail'])."'";
+
+              $result = mysql_query($query) or die (mysql_error());
+
+              $row = mysql_fetch_assoc($result);
+
+              echo json_encode($row);
 try {
 
 
