@@ -176,16 +176,18 @@ if (!mysqli_query($con,$sql)) {
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 
-if ($_SESSION['co']==1) {
+//exemple $row['nom']
+
+//if ($_SESSION['co']==1) {
   // code...
   ?>
-
+<div><?php echo $row['nom']?></div>
 
   <?php
-}
-else {
-  echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
-}
+//}
+//else {
+  //echo "<script>window.location = 'http://elineda.ovh/My-e-commerce'</script>";
+//}
 
 mysqli_close($con);
 

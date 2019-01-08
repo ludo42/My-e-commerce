@@ -20,6 +20,9 @@
 
 <body>
 
+
+
+
 <?php
        /*Inclusion d'un fichier de configuration pour centraliser les informations de connexion*/
        require_once 'test.php';
