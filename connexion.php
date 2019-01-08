@@ -165,7 +165,7 @@ try {
 
       $sql = "SELECT *
           FROM produit
-          where email=". mysql_escape_string($_POST['connectMail']);
+          where email='". mysql_real_escape_string($_POST['connectMail'])."'";
 
       $q = $conn->query($sql);
       $q->setFetchMode(PDO::FETCH_ASSOC);
