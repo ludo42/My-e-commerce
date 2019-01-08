@@ -67,86 +67,82 @@
 							</div>
 					</div>
 			</header>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription / Connexion</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+							<div class="modal-content">
+									<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+											</button>
+									</div>
+									<div class="modal-body">
 
-                        <form>
-                            <div class="form-group">
-                                <h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
-                                <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
-                                <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Se connecter</button>
-                            <button type="submit" class="btn btn-warning">Mot de passe perdu</button>
-                        </form>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+											<form method="post" action="connexion.php">
+													<div class="form-group">
+															<h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
+															<label for="exampleInputEmail1">Adresse email</label>
+															<input type="email" class="form-control" id="connectMail" name="connectMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+															<small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
+													</div>
+													<div class="form-group">
+															<label for="exampleInputPassword1">Mot de passe</label>
+															<input type="password" class="form-control" id="connectMDP" name="connectMDP" placeholder="Mot de passe">
+													</div>
+													<button type="submit" class="btn btn-primary">Se connecter</button>
+											</form>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form method="post" action="/trait/inscription.php">
-                            <div class="form-group">
-                                <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
-                                <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
-                                <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Nom</label>
-                              <input type="text" class="form-control" id="inscriNom">
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Prenom</label>
-                              <input type="text" class="form-control" id="inscriPrenom">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="inscriPass" placeholder="Mot de passe">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Répeter le mot de passe</label>
-                                <input type="password" class="form-control" id="inscriVerif" placeholder="Mot de passe">
-                            </div>
-                            <button type="submit" class="btn btn-primary">S'inscrire</button>
-                        </form>
+									</div>
+							</div>
+					</div>
+			</div>
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
+			<!-- Modal -->
+			<div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+							<div class="modal-content">
+									<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+											</button>
+									</div>
+									<div class="modal-body">
+
+											<form method="post" action="trait/inscription.php">
+													<div class="form-group">
+															<h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
+															<label for="exampleInputEmail1">Adresse email</label>
+															<input type="email" class="form-control" id="inscriMail" name="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+															<small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
+													</div>
+													<div class="form-group">
+														<label for="recipient-name" class="col-form-label">Nom</label>
+														<input type="text" class="form-control" id="inscriNom" name="inscriNom">
+													</div>
+													<div class="form-group">
+														<label for="recipient-name" class="col-form-label">Prenom</label>
+														<input type="text" class="form-control" id="inscriPrenom" name="inscriPrenom">
+													</div>
+													<div class="form-group">
+															<label for="exampleInputPassword1">Mot de passe</label>
+															<input type="password" class="form-control" id="inscriPass" name="inscriPass" placeholder="Mot de passe">
+													</div>
+													<div class="form-group">
+															<label for="exampleInputPassword1">Répeter le mot de passe</label>
+															<input type="password" class="form-control" id="inscriVerif" name="inscriVerif" placeholder="Mot de passe">
+													</div>
+													<button type="submit" class="btn btn-primary">S'inscrire</button>
+											</form>
 
 
-
+									</div>
+							</div>
+					</div>
+			</div>
 
 
 
