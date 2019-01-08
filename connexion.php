@@ -154,43 +154,32 @@
             if (isset($_POST['connectMail'])&&isset($_POST['connectMDP'])) {
               // code...
 
-              include 'db_connect.php';
-
-              mysql_select_db($dbname, $username,$password);
-
-              $query = "SELECT * FROM produit WHERE email ='". mysql_real_escape_string($_POST['connectMail'])."'";
-
-              $result = mysql_query($query) or die (mysql_error());
-
-              $row = mysql_fetch_assoc($result);
-
-              echo json_encode($row);
-try {
 
 
 
+$con=mysqli_connect($host,$username,$password,$dbname);
+
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+// escape variables for security
+$passwordd = mysqli_real_escape_string($con,$_POST['connectMail']);
+
+$sql="SELECT * FROM users WHERE email='$passwordd'";
+
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+echo "1 record added";
+$result = mysqli_query($con,$sql);
+$row = mysqli_fetch_assoc($result);
+echo $row['nom'];
 
 
-      $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+mysqli_close($con);
 
-
-      $sql = "SELECT *
-          FROM produit
-          where email='". mysql_real_escape_string($_POST['connectMail'])."'";
-
-      $q = $conn->query($sql);
-      $q->setFetchMode(PDO::FETCH_ASSOC);
-
-
-      echo $q;
-
-
-      //Fermer la connexion SQL (si absent, automatique à la fin du script)
-
-  }
-  catch (PDOException $pe) {
-  		    die("Could not connect to the database $dbname :" . $pe->getMessage());
-  		}
 
 
             }
