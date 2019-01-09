@@ -239,7 +239,7 @@ if (!mysqli_query($con,$sqlt)) {
                             <td><?php echo htmlspecialchars($rowt['nbProduit']);$nproduit=$rowt['nbProduit'];  ?></td>
                             <td><?php echo htmlspecialchars($rowt['nom']); ?></td>
                             <td><?php echo htmlspecialchars($rowt['prix']); ?> €</td>
-														<td><a href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> ">test</a></td>
+														<td><a href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> ">supprimer</a></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
