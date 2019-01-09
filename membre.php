@@ -29,118 +29,124 @@
        ?>
 
 
-    <div class="container-fluid">
-        <header class="col-lg-12 col-md-12 col-12">
-            <div class="top-bar col-lg-12 col-md-12 col-12">
-                <a class="logo-bar" href="index.html">(Owl Art)</a>
-                <a href="compte.html"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
-                <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#exampleModal">
-                    Inscription / Connexion
-                </button>
-                <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#inscription">
-                    Inscription / Connexion
-                </button>
-                <a class="col-lg-2 col-md-4 col-1 panier" href="panier.html">
-                    <img src="030-shopping-bag.png">Panier
-                </a>
-            </div>
-
-            <div class="nav color border col-md-12 col-12 col-lg-12">
-                <div class="logo">
-                    <img src="chouette.png">
-                    <h3>(Owl Art)</h3>
-                </div>
-                <div class="voir col-md-12 col-12 col-lg-12">
-                    <a>Home</a>
-                    <a>Nouveautés</a>
-                    <a>Oeuvres</a>
-                    <a href="filtre.html">Peinture</a>
-                    <a>Sculpture</a>
-                    <a>Photographie</a>
-                    <a>Dessin</a>
-                    <a>Artistes</a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription / Connexion</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form>
-                            <div class="form-group">
-                                <h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
-                                <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
-                                <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Se connecter</button>
-                            <button type="submit" class="btn btn-warning">Mot de passe perdu</button>
-                        </form>
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
+          <div class="container-fluid">
+              <header class="col-lg-12 col-md-12 col-12">
+                  <div class="top-bar col-lg-12 col-md-12 col-12">
+                      <a class="logo-bar" href="index.php">(Owl Art)</a>
+                      <?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?><a href="membre.php"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
+                          <a class="logo-bar" href="deco.php"><button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal">
+                            Deconnexion
+                        </button></a><?php endif; ?>
+                      <?php endif; ?>
+                      <?php if (!isset($_SESSION['co'])||$_SESSION['co']==0): ?>
+
+                       <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#exampleModal">
+                          Connexion
+                      </button>
+                      <button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal" data-target="#inscription">
+                          Inscription
+                      </button><?php endif; ?>
+                      <a class="col-lg-2 col-md-4 col-1 panier" href="panier.php">
+                          <img src="030-shopping-bag.png">Panier
+                      </a>
+                  </div>
+
+                  <div class="nav color border col-md-12 col-12 col-lg-12">
+                      <div class="logo">
+                          <img src="chouette.png">
+                          <h3>(Owl Art)</h3>
+                      </div>
+                      <div class="voir col-md-12 col-12 col-lg-12">
+                          <a>Home</a>
+                          <a>Nouveautés</a>
+                          <a>Oeuvres</a>
+                          <a href="filtre.html">Peinture</a>
+                          <a>Sculpture</a>
+                          <a>Photographie</a>
+                          <a>Dessin</a>
+                          <a>Artistes</a>
+                      </div>
+                  </div>
+              </header>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+
+                              <form method="post" action="connexion.php">
+                                  <div class="form-group">
+                                      <h3>Bienvenue chez (Owl Art) inscrivez vous ou bien connectez vous !</h3>
+                                      <label for="exampleInputEmail1">Adresse email</label>
+                                      <input type="email" class="form-control" id="connectMail" name="connectMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                      <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">Mot de passe</label>
+                                      <input type="password" class="form-control" id="connectMDP" name="connectMDP" placeholder="Mot de passe">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Se connecter</button>
+                              </form>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form method="post" action="/trait/inscription.php">
-                            <div class="form-group">
-                                <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
-                                <label for="exampleInputEmail1">Adresse email</label>
-                                <input type="email" class="form-control" id="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
-                                <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Nom</label>
-                              <input type="text" class="form-control" id="inscriNom">
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Prenom</label>
-                              <input type="text" class="form-control" id="inscriPrenom">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
-                                <input type="password" class="form-control" id="inscriPass" placeholder="Mot de passe">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Répeter le mot de passe</label>
-                                <input type="password" class="form-control" id="inscriVerif" placeholder="Mot de passe">
-                            </div>
-                            <button type="submit" class="btn btn-primary">S'inscrire</button>
-                        </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
+              <!-- Modal -->
+              <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
 
+                              <form method="post" action="trait/inscription.php">
+                                  <div class="form-group">
+                                      <h3>Bienvenue chez (Owl Art) inscrivez vous!</h3>
+                                      <label for="exampleInputEmail1">Adresse email</label>
+                                      <input type="email" class="form-control" id="inscriMail" name="inscriMail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                                      <small id="emailHelp" class="form-text text-muted">Nous n'echangerons pas vos email</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nom</label>
+                                    <input type="text" class="form-control" id="inscriNom" name="inscriNom">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Prenom</label>
+                                    <input type="text" class="form-control" id="inscriPrenom" name="inscriPrenom">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">Mot de passe</label>
+                                      <input type="password" class="form-control" id="inscriPass" name="inscriPass" placeholder="Mot de passe">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">Répeter le mot de passe</label>
+                                      <input type="password" class="form-control" id="inscriVerif" name="inscriVerif" placeholder="Mot de passe">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">S'inscrire</button>
+                              </form>
+
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
 
 
@@ -163,7 +169,7 @@ if (mysqli_connect_errno()) {
 }
 
 // escape variables for security
-$mail = mysqli_real_escape_string($con,$_POST['connectMail']);
+$mail =$_SESSION['client'];
 
 $sql="SELECT * FROM users WHERE email='$mail'";
 
@@ -173,8 +179,31 @@ if (!mysqli_query($con,$sql)) {
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
-<div><?php echo $row['nom'];?></div>
 
+
+<form method="POST" action="traitementmembres.php" role="form">
+            <div>
+                     <label for="nom">nom :</label>
+                     <input type="text" placeholder="Votre nom" id="nom" name="nom" value="<?php echo $row['nom'];  ?>"/>
+            </div>
+            <div>
+                     <label for="prenom">prenom :</label>
+                     <input type="text" placeholder="Votre prenom" id="prenom" name="prenom" value="<?php echo $row['prenom'];  ?>"/>
+            </div>
+            <div class="form-group">
+                     <label for="mail">Adresse de courriel :</label>
+                     <input type="email" placeholder="Votre mail" id="mail" name="email" value="<?php echo $row['email']; ?>"/>
+            </div>
+            <div>
+                     <label for="motdepasse">Entrez mot de passe :</label>
+                     <input type="password" placeholder="Votre mot de passe" id="motdepasse" name="passw" value="<?php echo $row['passw'];  ?>"/>
+            </div>
+            <div>
+                     <input type="submit" name="envoyer" value="envoyer">
+
+            </div>
+
+</form>
 <?php
 
 

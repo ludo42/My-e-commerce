@@ -32,7 +32,7 @@
 			<header class="col-lg-12 col-md-12 col-12">
 					<div class="top-bar col-lg-12 col-md-12 col-12">
 							<a class="logo-bar" href="index.php">(Owl Art)</a>
-							<?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?><a href="compte.html"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
+							<?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?><a href="membre.php"><button type="button" class="btn col-lg-1 col-md-2 col-2 offset-lg-5 btn-success">Mon compte</button></a>
 									<a class="logo-bar" href="deco.php"><button type="button" class="btn btn-primary col-lg-2 col-md-3 col-4" data-toggle="modal">
 										Deconnexion
 								</button></a><?php endif; ?>
@@ -238,7 +238,7 @@ if (!mysqli_query($con,$sqlt)) {
                         <tr>
                             <td><?php echo htmlspecialchars($rowt['nbProduit']);$nproduit=$rowt['nbProduit'];  ?></td>
                             <td><?php echo htmlspecialchars($rowt['nom']); ?></td>
-                            <td><?php echo htmlspecialchars($rowt['prix']); ?></td>
+                            <td><?php echo htmlspecialchars($rowt['prix']); ?> €</td>
 														<td><a href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> ">test</a></td>
                         </tr>
                     <?php endwhile; ?>
