@@ -196,7 +196,9 @@ if (isset($_SESSION['co'])){
 		$nmClient= $rowu['nmClient'];
 		$sqld="INSERT INTO panierProduit VALUES ('$nmClient','$id')";
 		if (mysqli_query($con, $sqld)) {
-               echo '<div>Produit ajouté au panier</div>';
+               echo '<div style="margin: 0 auto; margin-top:1em;" class="alert alert-secondary" role="alert">
+  Produit ajouté au panier
+</div>';
             }
 
 
@@ -229,25 +231,37 @@ $exet= mysqli_query($con,$sqlt);
 if (!mysqli_query($con,$sqlt)) {
 	die('Error: ' . mysqli_error($con));
 }
+
+$sqlq="SELECT SUM(prix) prix FROM produit WHERE nbProduit IN ( SELECT produitID from panierProduit where userID='$nmClient')";
+$exeq= mysqli_query($con,$sqlq);
+if (!mysqli_query($con,$sqlq)) {
+	die('Error: ' . mysqli_error($con));
+}
+$rowq= mysqli_fetch_assoc($exeq);
+
 }}?>
 
-<?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?>
+	<h1>Panier</h1>
+<?php if (isset($_SESSION['co'])): ?><?php if ($_SESSION['co']==1): ?><div class="container">
 <table class="table table-bordered table-condensed">
 									<tbody>
                     <?php while ($rowt = mysqli_fetch_assoc($exet)): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($rowt['nbProduit']);$nproduit=$rowt['nbProduit'];  ?></td>
-                            <td><?php echo htmlspecialchars($rowt['nom']); ?></td>
+                            <td><?php echo htmlspecialchars($rowt['nom']);$nproduit=$rowt['nbProduit']; ?></td>
                             <td><?php echo htmlspecialchars($rowt['prix']); ?> €</td>
-														<td><a href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> ">supprimer</a></td>
+														<td><a style="margin-left: 33%;" href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> "><button type="button" class="btn btn-danger">supprimer</button></a></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
 
+						<div style="margin-left: 62.5%;"><div class="alert alert-success" role="alert">
+  Total : <?php echo htmlspecialchars($rowq['prix']);?> €
+</div></div>
+<div style="margin-left: 45%; margin-top:1em;"><button type="button" class="btn btn-secondary">Payer</button>
 
-
-
+</div>
+</div>
 					<?php endif; ?>
 					<?php endif; ?>
 
