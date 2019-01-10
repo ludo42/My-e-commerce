@@ -207,7 +207,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">mot de passe</span>
             </div>
-            <input type="text" placeholder="Votre mot de passe" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $row['passw'];  ?>"/>
+            <input type="password" placeholder="Votre mot de passe" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $row['passw'];  ?>"/>
           </div>
 
           <div class="input-group mb-3">
