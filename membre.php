@@ -179,31 +179,79 @@ if (!mysqli_query($con,$sql)) {
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">nom</span>
+            </div>
+            <input type="text" placeholder="Votre nom" aria-label="First name" class="form-control" value="<?php echo $row['nom'];  ?>"/>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">prénom</span>
+            </div>
+            <input type="text" placeholder="Votre prenom" aria-label="First name" class="form-control" value="<?php echo $row['prenom'];  ?>"/>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">adresse mail</span>
+            </div>
+            <input type="text" placeholder="Votre mail" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="<?php echo $row['email']; ?>"/>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">mot de passe</span>
+            </div>
+            <input type="text" placeholder="Votre mot de passe" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $row['passw'];  ?>"/>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <input class="input-group-text" type="submit"  name="envoyer" value="envoyer">
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
 
 
-<form method="POST" action="traitementmembres.php" role="form">
-            <div>
+<!--
+<div class="container">
+    <div class="row">
+        <div class="">
+
+          <form method="POST" action="traitementmembres.php" role="form">
+              <div>
                      <label for="nom">nom :</label>
                      <input type="text" placeholder="Votre nom" id="nom" name="nom" value="<?php echo $row['nom'];  ?>"/>
-            </div>
-            <div>
+              </div>
+              <div>
                      <label for="prenom">prenom :</label>
                      <input type="text" placeholder="Votre prenom" id="prenom" name="prenom" value="<?php echo $row['prenom'];  ?>"/>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                      <label for="mail">Adresse de courriel :</label>
                      <input type="email" placeholder="Votre mail" id="mail" name="email" value="<?php echo $row['email']; ?>"/>
-            </div>
-            <div>
+              </div>
+              <div>
                      <label for="motdepasse">Entrez mot de passe :</label>
                      <input type="password" placeholder="Votre mot de passe" id="motdepasse" name="passw" value="<?php echo $row['passw'];  ?>"/>
-            </div>
-            <div>
+              </div>
+              <div>
                      <input type="submit" name="envoyer" value="envoyer">
 
-            </div>
+              </div>
 
-</form>
+         </form>
+       </div>
+    </div>
+</div>
+-->
 <?php
 
 

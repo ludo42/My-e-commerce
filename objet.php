@@ -33,8 +33,9 @@
 
 
 
-               $sql = 'SELECT nbProduit, nom, description, prix, photo, taille
+               $sql = 'SELECT *
                    FROM produit
+                   WHERE categorie="objet"
                    ORDER BY nbProduit
                    limit 10';
 
@@ -83,7 +84,7 @@
                     <a>Home</a>
                     <a>Nouveautés</a>
                     <a>Oeuvres</a>
-                    <a href="categorie.php">Peinture</a>
+                    <a>Peinture</a>
                     <a>Sculpture</a>
                     <a>Photographie</a>
                     <a>Dessin</a>
@@ -196,8 +197,6 @@
                         <img class="card-img-top" src="henrik.jpg" alt="Card image cap">
                         <div class="card-body cat">
                             <p class="card-text">TABLEAU</p>
-                            
-
                         </div>
                     </div>
 
