@@ -34,11 +34,11 @@ if (mysqli_query($con, $sql)) {
 
 
 
-
 else {
   echo 'rate';
 }
 
+echo "<script>window.location = 'http://elineda.ovh/My-e-commerce/membre.php'</script>";
 
 
 

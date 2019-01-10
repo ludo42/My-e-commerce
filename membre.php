@@ -180,34 +180,36 @@ $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
 <div class="container">
+  <form method="POST" action="traitementmembres.php" role="form">
     <div class="row">
+
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">nom</span>
             </div>
-            <input type="text" placeholder="Votre nom" aria-label="First name" class="form-control" value="<?php echo $row['nom'];  ?>"/>
+            <input type="text" placeholder="Votre nom" aria-label="First name" name="nom" class="form-control" value="<?php echo $row['nom'];  ?>"/>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">prénom</span>
             </div>
-            <input type="text" placeholder="Votre prenom" aria-label="First name" class="form-control" value="<?php echo $row['prenom'];  ?>"/>
+            <input type="text" placeholder="Votre prenom" aria-label="First name" name="prenom" class="form-control" value="<?php echo $row['prenom'];  ?>"/>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon3">adresse mail</span>
             </div>
-            <input type="text" placeholder="Votre mail" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="<?php echo $row['email']; ?>"/>
+            <input type="text" placeholder="Votre mail" class="form-control" name="email" id="basic-url" aria-describedby="basic-addon3" value="<?php echo $row['email']; ?>"/>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">mot de passe</span>
             </div>
-            <input type="password" placeholder="Votre mot de passe" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $row['passw'];  ?>"/>
+            <input type="password" placeholder="Votre mot de passe" class="form-control" name="passw"aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $row['passw'];  ?>"/>
           </div>
 
           <div class="input-group mb-3">
@@ -216,7 +218,9 @@ $row = mysqli_fetch_assoc($result);
             </div>
           </div>
         </div>
+
     </div>
+      </form>
 </div>
 
 
