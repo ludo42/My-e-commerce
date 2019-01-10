@@ -181,7 +181,7 @@ if (!mysqli_query($con,$sql)) {
 }
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
-
+$prix=$row['prix'];
 
 if (isset($_SESSION['co'])){
 	if ($_SESSION['co']==1){
@@ -194,7 +194,7 @@ if (isset($_SESSION['co'])){
 		}
 		$rowu= mysqli_fetch_assoc($exeu);
 		$nmClient= $rowu['nmClient'];
-		$sqld="INSERT INTO panierProduit VALUES ('$nmClient','$id')";
+		$sqld="INSERT INTO panierProduit VALUES ('$nmClient','$id','$prix')";
 		if (mysqli_query($con, $sqld)) {
                echo '<div style="margin: 0 auto; margin-top:1em;" class="alert alert-secondary" role="alert">
   Produit ajouté au panier
@@ -232,12 +232,14 @@ if (!mysqli_query($con,$sqlt)) {
 	die('Error: ' . mysqli_error($con));
 }
 
-$sqlq="SELECT SUM(prix) prix FROM produit WHERE nbProduit IN ( SELECT produitID from panierProduit where userID='$nmClient')";
+$sqlq="SELECT SUM(prix) prix FROM panierProduit WHERE userID='$nmClient'";
 $exeq= mysqli_query($con,$sqlq);
 if (!mysqli_query($con,$sqlq)) {
 	die('Error: ' . mysqli_error($con));
 }
 $rowq= mysqli_fetch_assoc($exeq);
+
+
 
 }}?>
 
@@ -247,8 +249,20 @@ $rowq= mysqli_fetch_assoc($exeq);
 									<tbody>
                     <?php while ($rowt = mysqli_fetch_assoc($exet)): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($rowt['nom']);$nproduit=$rowt['nbProduit']; ?></td>
+                            <td><?php echo htmlspecialchars($rowt['nom']);$nproduit=$rowt['nbProduit'];
+
+														$sqlf="SELECT COUNT(produitID) cont FROM panierProduit WHERE userId='$nmClient' AND produitID='$nproduit'";
+														$exef= mysqli_query($con,$sqlf);
+														if (!mysqli_query($con,$sqlf)) {
+															die('Error: ' . mysqli_error($con));
+														}
+														$rowf= mysqli_fetch_assoc($exef);
+
+
+
+														?></td>
                             <td><?php echo htmlspecialchars($rowt['prix']); ?> €</td>
+														<td><?php echo htmlspecialchars($rowf['cont']); ?></td>
 														<td><a style="margin-left: 33%;" href="supp.php?ido=<?php echo $nproduit?>&idu=<?php echo $nmClient?> "><button type="button" class="btn btn-danger">supprimer</button></a></td>
                         </tr>
                     <?php endwhile; ?>
@@ -258,7 +272,7 @@ $rowq= mysqli_fetch_assoc($exeq);
 						<div style="margin-left: 62.5%;"><div class="alert alert-success" role="alert">
   Total : <?php echo htmlspecialchars($rowq['prix']);?> €
 </div></div>
-<div style="margin-left: 45%; margin-top:1em;"><button type="button" class="btn btn-secondary">Payer</button>
+<div style="margin-left: 45%; margin-top:1em;"><a href="achat.php"><button type="button" class="btn btn-secondary">Payer</button></a>
 
 </div>
 </div>
