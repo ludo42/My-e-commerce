@@ -202,7 +202,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon3">adresse mail</span>
             </div>
-            <input type="text" placeholder="Votre mail" class="form-control" name="email" id="basic-url" aria-describedby="basic-addon3" value="<?php echo $row['email']; ?>"/>
+            <input type="text" placeholder="Votre mail" class="form-control" name="email" readonly id="basic-url" aria-describedby="basic-addon3" value="<?php echo $row['email']; ?>"/>
           </div>
 
           <div class="input-group mb-3">
